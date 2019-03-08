@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 
-const hostname = '127.0.0.1'   // set constants
+const hostname = '0.0.0.0'   // set constants
 const port = 3002
 
 app.get('/', function (req, res) {
-  res.send('Welcome home!')
+  res.send('Welcome!')
 })
 
 app.get('/hello', (req, res) => {
@@ -13,11 +13,16 @@ app.get('/hello', (req, res) => {
 })
 
 app.get('/big',  (req, res) =>{
-  res.send('<h1>Hello World!</h1>')
+  res.send('<h1> Big World!</h1>')
 })
 
-app.get('/greeting/:id',  (req, res) =>{
-  res.send('Hello! The id was ' + req.params.id)
+
+app.get('/typename/:id',  (req, res) =>{
+  res.send('Hello! My name is '.fontcolor("green").fontsize(900) + req.params.id.fontsize(900).fontcolor("green"))
+})
+
+app.get('/getimage/',  (req, res) =>{
+  res.send('Clickhere to go to image'.fontcolor("blue").fontsize(900).link("https://images.unsplash.com/photo-1487284122274-e864e9dec2bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"))
 })
 
 app.get('/yo/:buddy',  (req, res) =>{
